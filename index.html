@@ -1,9 +1,10 @@
-<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Pianolektion 2.0 – Alfa 2</title><style>
+<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Pianolektion 2.0 – Alfa 3</title><style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif}*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:#14101b url('pianorum.jpg') center/cover fixed;color:white}body:before{content:"";position:fixed;inset:0;background:#07071235;pointer-events:none}.app{position:relative;display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100dvh;gap:12px;padding:18px}.panel{background:#16131fe9;border:1px solid #ffffff45;border-radius:18px;padding:18px;align-self:start;box-shadow:0 14px 40px #0007;backdrop-filter:blur(18px)}h1{font-size:19px;margin:0 0 8px}p{color:#d4cbdc;font-size:13px;line-height:1.5}.control{margin:20px 0}.control label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px}.control output{font-variant-numeric:tabular-nums;color:#f8c4e3}input[type=range]{width:100%;accent-color:#e9a9cf;cursor:pointer}.stage{display:grid;place-items:center;min-width:0}.ring-wrap{width:min(75vh,85%);aspect-ratio:1;position:relative;filter:drop-shadow(0 10px 18px #0004)}svg{width:100%;height:100%;overflow:visible}.center{position:absolute;inset:18%;display:flex;align-items:center;justify-content:center;flex-direction:column;text-shadow:0 3px 15px #000}.time{font-size:clamp(38px,6vw,86px);font-weight:750;letter-spacing:-.04em}.sub{font-size:13px;letter-spacing:.13em;color:#fff9}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}button{background:#ffffff20;color:white;border:1px solid #ffffff60;border-radius:11px;padding:10px 14px;cursor:pointer}.note{margin-top:16px;border-top:1px solid #ffffff2e;padding-top:12px}.version{font-size:11px;color:#f5c9e4}@media(max-width:740px){.app{display:flex;flex-direction:column;padding:10px}.stage{order:0;min-height:55vh}.panel{order:1;width:100%}.ring-wrap{width:min(80vw,55vh)}.time{font-size:clamp(38px,9vw,68px)}}
-</style></head><body><main class="app"><section class="panel"><h1>🎹 Pianolektion 2.0</h1><div class="version">ALFA 2 · Fristående glasringmotor</div><p>Vi förfinar glasets välvning och reflektioner. Alla reglage är fortsatt oberoende.</p><div class="control"><label for="fill">Färgernas täckning <output id="fillVal">55 %</output></label><input id="fill" type="range" min="0" max="100" value="55"></div><div class="control"><label for="glow">Glöd runt ringen <output id="glowVal">25 %</output></label><input id="glow" type="range" min="0" max="100" value="25"></div><div class="control"><label for="edge">Konturlinjernas tydlighet <output id="edgeVal">65 %</output></label><input id="edge" type="range" min="0" max="100" value="65"></div><div class="control"><label for="size">Ringens storlek <output id="sizeVal">100 %</output></label><input id="size" type="range" min="65" max="125" value="100"></div><div class="actions"><button id="reset">Återställ utseende</button><button id="toggle">Starta testtimer</button></div><p class="note">Vid <b>0 % på de tre första reglagen</b> ska ringen försvinna helt. Detta är en separat testversion – elevprofiler, ljud och övriga funktioner finns kvar i den gamla appen tills de förs över och testas.</p></section><section class="stage"><div class="ring-wrap" id="wrap"><svg viewBox="0 0 600 600" role="img" aria-label="Glasring med fyra färgsegment"><defs>
+</style></head><body><main class="app"><section class="panel"><h1>🎹 Pianolektion 2.0</h1><div class="version">ALFA 3 · Fristående glasringmotor</div><p>Kristallglas: mjuk välvning, få ljusreflexer och tydligt åtskilda reglage.</p><div class="control"><label for="fill">Färgernas täckning <output id="fillVal">55 %</output></label><input id="fill" type="range" min="0" max="100" value="55"></div><div class="control"><label for="glow">Glöd runt ringen <output id="glowVal">25 %</output></label><input id="glow" type="range" min="0" max="100" value="25"></div><div class="control"><label for="edge">Konturlinjernas tydlighet <output id="edgeVal">65 %</output></label><input id="edge" type="range" min="0" max="100" value="65"></div><div class="control"><label for="size">Ringens storlek <output id="sizeVal">100 %</output></label><input id="size" type="range" min="65" max="125" value="100"></div><div class="actions"><button id="reset">Återställ utseende</button><button id="toggle">Starta testtimer</button></div><p class="note">Vid <b>0 % på de tre första reglagen</b> ska ringen försvinna helt. Detta är en separat testversion – elevprofiler, ljud och övriga funktioner finns kvar i den gamla appen tills de förs över och testas.</p></section><section class="stage"><div class="ring-wrap" id="wrap"><svg viewBox="0 0 600 600" role="img" aria-label="Glasring med fyra färgsegment"><defs>
 <filter id="blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
-<linearGradient id="glassDepth" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".05"/><stop offset=".13" stop-color="#fff" stop-opacity=".38"/><stop offset=".30" stop-color="#fff" stop-opacity=".05"/><stop offset=".57" stop-color="#fff" stop-opacity=".015"/><stop offset=".84" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".04"/></linearGradient>
-</defs><g id="glows" filter="url(#blur)"></g><g id="colors"></g><g id="sheen"></g><g id="edges"></g></svg><div class="center"><div class="sub">TID KVAR</div><div class="time" id="clock">05:00</div><div class="sub">GLASRING · ALFA 2</div></div></div></section></main><script>
+<linearGradient id="volume" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0" stop-color="#ffffff" stop-opacity=".26"/><stop offset=".19" stop-color="#ffffff" stop-opacity=".025"/><stop offset=".48" stop-color="#ffffff" stop-opacity=".005"/><stop offset=".78" stop-color="#c9efff" stop-opacity=".065"/><stop offset="1" stop-color="#ffffff" stop-opacity=".18"/></linearGradient>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4"/></filter>
+</defs><g id="glows" filter="url(#blur)"></g><g id="colors"></g><g id="sheen"></g><g id="edges"></g></svg><div class="center"><div class="sub">TID KVAR</div><div class="time" id="clock">05:00</div><div class="sub">GLASRING · ALFA 3</div></div></div></section></main><script>
 'use strict';
 const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';
 const palette=['#e8b8f4','#f6b3d2','#a8d4ff','#5ed5d0'];
@@ -14,25 +15,25 @@ function render(){
  for(const id of ['fill','glow','edge','size'])$(id+'Val').textContent=$(id).value+' %';
  $('wrap').style.transform=`scale(${$('size').value/100})`;
  for(const id of ['glows','colors','sheen','edges'])$(id).replaceChildren();
- palette.forEach((c,i)=>{
-  const a=i*90+.7,b=(i+1)*90-.7;
-  // One continuous physical glass band; color and specular light share its geometry.
-  if(f>0){
-   make('path',{d:arc(a,b,217),stroke:c,'stroke-width':52,opacity:(f*.27).toFixed(3),fill:'none'},$('colors'));
-   // Curved-glass illusion: offset translucent ribbons inside the SAME band.
-   for(const [r,w,o] of [[193,4,.14],[199,8,.07],[220,17,.035],[235,8,.10],[240,3,.19]]){
-    make('path',{d:arc(a,b,r),stroke:'#ffffff','stroke-width':w,opacity:(f*o).toFixed(3),fill:'none'},$('sheen'));
-   }
-  }
-  if(g>0){
-   // Soft edge light, not an additional thick color ring.
-   for(const r of [190,244])make('path',{d:arc(a,b,r),stroke:c,'stroke-width':7,opacity:(g*.50).toFixed(3),fill:'none'},$('glows'));
-  }
- });
+ // The band is one physical volume, radius 190–244. Each control affects only its own layer.
+ if(f>0){
+  make('circle',{cx:300,cy:300,r:217,stroke:'url(#volume)','stroke-width':54,opacity:(f*.66).toFixed(3),fill:'none'},$('colors'));
+  palette.forEach((c,i)=>{
+   make('path',{d:arc(i*90+.4,(i+1)*90-.4,217),stroke:c,'stroke-width':52,opacity:(f*.13).toFixed(3),fill:'none'},$('colors'));
+  });
+  // Broad, faint curved illumination, without hard concentric plastic strips.
+  for(const [a,b,r,w,o] of [[205,311,222,26,.10],[22,93,209,24,.085],[124,190,225,22,.055]])
+   make('path',{d:arc(a,b,r),stroke:'#ffffff','stroke-width':w,'stroke-linecap':'round',opacity:(f*o).toFixed(3),fill:'none',filter:'url(#soft)'},$('sheen'));
+ }
+ if(g>0){
+  for(const [a,b,r,c] of [[195,330,244,'#d7f8ff'],[15,165,190,'#e8d9ff']])
+   make('path',{d:arc(a,b,r),stroke:c,'stroke-width':4,'stroke-linecap':'round',opacity:(g*.52).toFixed(3),fill:'none',filter:'url(#blur)'},$('glows'));
+ }
  if(e>0){
-  // Subtle contour lines, deliberately interrupted highlights rather than uniform white hoops.
-  for(const [r,w,o] of [[190,1.3,.48],[244,1.1,.35]])make('circle',{cx:300,cy:300,r,fill:'none',stroke:'#f7fbff','stroke-width':w,opacity:(e*o).toFixed(3)},$('edges'));
-  for(const [a,b,r,w,o] of [[208,291,190,2.6,.68],[15,73,244,2.2,.60],[115,166,190,1.8,.32],[296,347,244,1.7,.37]])make('path',{d:arc(a,b,r),stroke:'#fff','stroke-linecap':'round','stroke-width':w,opacity:(e*o).toFixed(3),fill:'none'},$('edges'));
+  // Glass boundaries: restrained, delicate, not two bright full white circles.
+  for(const [r,o] of [[190,.16],[244,.13]])make('circle',{cx:300,cy:300,r,stroke:'#eafaff','stroke-width':.8,opacity:(e*o).toFixed(3),fill:'none'},$('edges'));
+  for(const [a,b,r,w,o] of [[210,285,244,1.7,.73],[302,350,190,1.2,.35],[24,67,190,1.5,.57],[118,155,244,1.1,.32]])
+   make('path',{d:arc(a,b,r),stroke:'#ffffff','stroke-width':w,'stroke-linecap':'round',opacity:(e*o).toFixed(3),fill:'none'},$('edges'));
  }
 }
 for(const id of ['fill','glow','edge','size'])$(id).addEventListener('input',render);
